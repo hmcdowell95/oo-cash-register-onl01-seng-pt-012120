@@ -23,7 +23,8 @@ class CashRegister
     else
       a = 100.0 - @discount
       b = a / 100.0
-      @total * b
+      c = @total * b
+      @total = c
       puts "After the discount, the total comes to $#{total}."
     end
   end
