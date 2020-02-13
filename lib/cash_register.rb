@@ -7,12 +7,15 @@ class CashRegister
     @items = []
   end
   
+  @@list = []
+  
   def total
     @total
   end
   
   def add_item(i, v, q = 1)
     a = v * q
+    @@list << a
     @total += a
     q.times {@items << i}
   end
@@ -34,7 +37,9 @@ class CashRegister
   end
     
   def void_last_transaction
-    
+    z = @@list[-1]
+    @@list.pop
+    @total - z
   end
 end
   
