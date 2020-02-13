@@ -38,7 +38,8 @@ class CashRegister
     
   def void_last_transaction
     z = @@list[-1]
-    @total - z
+    @total -= z
+    @@list.pop
   end
 end
   
